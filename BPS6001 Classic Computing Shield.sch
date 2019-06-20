@@ -11990,6 +11990,9 @@ by exp-lbrs.ulp</description>
 <part name="3V3_PWR4" library="GadgetFactory_all" deviceset="3V3" device=""/>
 <part name="3V3_PWR12" library="GadgetFactory" deviceset="3V3" device=""/>
 <part name="SUPPLY14" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+5V" device=""/>
+<part name="C4" library="resistor" deviceset="C-EU" device="C0603" value="10p"/>
+<part name="C5" library="resistor" deviceset="C-EU" device="C0603" value="10p"/>
+<part name="C6" library="resistor" deviceset="C-EU" device="C0603" value="10p"/>
 </parts>
 <sheets>
 <sheet>
@@ -13563,12 +13566,12 @@ by exp-lbrs.ulp</description>
 <instance part="SUPPLY12" gate="+5V" x="137.16" y="177.8" smashed="yes">
 <attribute name="VALUE" x="135.255" y="180.975" size="1.778" layer="96"/>
 </instance>
-<instance part="C2" gate="G$1" x="127" y="96.52" smashed="yes" rot="R180">
-<attribute name="NAME" x="125.476" y="96.139" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="125.476" y="101.219" size="1.778" layer="96" rot="R180"/>
+<instance part="C2" gate="G$1" x="119.38" y="129.54" smashed="yes" rot="R90">
+<attribute name="NAME" x="118.999" y="131.064" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="124.079" y="131.064" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="SUPPLY13" gate="GND" x="127" y="88.9" smashed="yes">
-<attribute name="VALUE" x="125.095" y="85.725" size="1.778" layer="96"/>
+<instance part="SUPPLY13" gate="GND" x="109.22" y="127" smashed="yes">
+<attribute name="VALUE" x="107.315" y="123.825" size="1.778" layer="96"/>
 </instance>
 <instance part="C3" gate="G$1" x="38.1" y="104.14" smashed="yes" rot="R180">
 <attribute name="NAME" x="36.576" y="103.759" size="1.778" layer="95" rot="R180"/>
@@ -13576,6 +13579,18 @@ by exp-lbrs.ulp</description>
 </instance>
 <instance part="SUPPLY14" gate="+5V" x="236.22" y="109.22" smashed="yes" rot="R180">
 <attribute name="VALUE" x="238.125" y="106.045" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C4" gate="G$1" x="119.38" y="134.62" smashed="yes" rot="R90">
+<attribute name="NAME" x="118.999" y="136.144" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="124.079" y="136.144" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="C5" gate="G$1" x="119.38" y="139.7" smashed="yes" rot="R90">
+<attribute name="NAME" x="118.999" y="141.224" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="124.079" y="141.224" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="C6" gate="G$1" x="119.38" y="144.78" smashed="yes" rot="R90">
+<attribute name="NAME" x="118.999" y="146.304" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="124.079" y="146.304" size="1.778" layer="96" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -13590,8 +13605,12 @@ by exp-lbrs.ulp</description>
 <wire x1="149.86" y1="147.32" x2="134.62" y2="147.32" width="0.1524" layer="91"/>
 <pinref part="R51" gate="G$1" pin="1"/>
 <wire x1="149.86" y1="154.94" x2="149.86" y2="147.32" width="0.1524" layer="91"/>
-<wire x1="134.62" y1="147.32" x2="134.62" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="147.32" x2="134.62" y2="144.78" width="0.1524" layer="91"/>
 <junction x="134.62" y="116.84"/>
+<pinref part="C6" gate="G$1" pin="2"/>
+<wire x1="134.62" y1="144.78" x2="134.62" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="144.78" x2="134.62" y2="144.78" width="0.1524" layer="91"/>
+<junction x="134.62" y="144.78"/>
 </segment>
 </net>
 <net name="IEC-H-DATA" class="0">
@@ -13605,8 +13624,12 @@ by exp-lbrs.ulp</description>
 <pinref part="R50" gate="G$1" pin="1"/>
 <wire x1="142.24" y1="154.94" x2="142.24" y2="149.86" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="149.86" x2="132.08" y2="149.86" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="149.86" x2="132.08" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="149.86" x2="132.08" y2="139.7" width="0.1524" layer="91"/>
 <junction x="132.08" y="114.3"/>
+<pinref part="C5" gate="G$1" pin="2"/>
+<wire x1="132.08" y1="139.7" x2="132.08" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="139.7" x2="132.08" y2="139.7" width="0.1524" layer="91"/>
+<junction x="132.08" y="139.7"/>
 </segment>
 </net>
 <net name="IEC-H-ATN" class="0">
@@ -13620,10 +13643,12 @@ by exp-lbrs.ulp</description>
 <pinref part="X2" gate="G$1" pin="3"/>
 <wire x1="218.44" y1="106.68" x2="210.82" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="R28" gate="G$1" pin="1"/>
-<wire x1="127" y1="154.94" x2="127" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="127" y1="154.94" x2="127" y2="129.54" width="0.1524" layer="91"/>
 <junction x="127" y="104.14"/>
 <pinref part="C2" gate="G$1" pin="2"/>
-<wire x1="127" y1="104.14" x2="127" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="127" y1="129.54" x2="127" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="129.54" x2="127" y2="129.54" width="0.1524" layer="91"/>
+<junction x="127" y="129.54"/>
 </segment>
 </net>
 <net name="IEC-H-CLK" class="0">
@@ -13639,8 +13664,12 @@ by exp-lbrs.ulp</description>
 <pinref part="R49" gate="G$1" pin="1"/>
 <wire x1="134.62" y1="154.94" x2="134.62" y2="152.4" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="152.4" x2="129.54" y2="152.4" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="152.4" x2="129.54" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="152.4" x2="129.54" y2="134.62" width="0.1524" layer="91"/>
 <junction x="129.54" y="106.68"/>
+<pinref part="C4" gate="G$1" pin="2"/>
+<wire x1="129.54" y1="134.62" x2="129.54" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="134.62" x2="129.54" y2="134.62" width="0.1524" layer="91"/>
+<junction x="129.54" y="134.62"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -13678,7 +13707,16 @@ by exp-lbrs.ulp</description>
 <segment>
 <pinref part="C2" gate="G$1" pin="1"/>
 <pinref part="SUPPLY13" gate="GND" pin="GND"/>
-<wire x1="127" y1="93.98" x2="127" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="129.54" x2="109.22" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="C6" gate="G$1" pin="1"/>
+<pinref part="C5" gate="G$1" pin="1"/>
+<wire x1="116.84" y1="144.78" x2="116.84" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="116.84" y1="139.7" x2="116.84" y2="134.62" width="0.1524" layer="91"/>
+<junction x="116.84" y="139.7"/>
+<wire x1="116.84" y1="134.62" x2="116.84" y2="129.54" width="0.1524" layer="91"/>
+<junction x="116.84" y="134.62"/>
+<junction x="116.84" y="129.54"/>
 </segment>
 </net>
 <net name="IEC-H-SRQ" class="0">

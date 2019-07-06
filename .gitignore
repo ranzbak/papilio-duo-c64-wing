@@ -1,6 +1,6 @@
 *.zip
 *.rar
-*.html
+#*.html
 *.pdf
 *.jpg
 *.png
